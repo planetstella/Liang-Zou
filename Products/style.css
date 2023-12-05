@@ -1,4 +1,4 @@
-@import url("reset.css");
+@import url("../reset.css");
 
 body{
     background-color: #f9f9f9;
@@ -61,7 +61,7 @@ body{
 
 /* -----------banner頁面標題----------------- */
 .banner{
-    background-image: url("img/pc_banner.png");
+    background-image: url("../img/pc_banner.png");
     height: 200px;
 }
 
@@ -170,7 +170,7 @@ body{
 .vegProducts li .info .infoLeft .price{
     display: flex;
     align-items: center;
-    /* margin-bottom: 12px; */
+    margin-bottom: 12px;
 }
 
 .vegProducts li .info .infoLeft .price p:first-child{
