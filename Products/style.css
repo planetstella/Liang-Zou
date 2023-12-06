@@ -216,33 +216,44 @@ body{
     margin-right: 8px;
 }
 
-/* ---------------page Btn------------------- */
-.pageBtn{
-    display: flex;
-    justify-content: center;
+/* ---------------pagination------------------- */
+.pagination{
+    display: block;
     margin-top: 80px;
     margin-bottom: 88px;
 }
 
-.pageBtn .pageSel > a{
-    margin: 0 10px;
-    text-decoration: none;
-    font-size: 16px;
-    color: #333;
+.page {
+    width: 400px;
     line-height: 40px;
-    text-align: center;
+    margin: 0 auto;
 }
 
-.pageBtn .pageNumber > a{
-    margin: 0 10px;
+.page a {
+    display: inline-block;
+    color: #333333;
+    padding: 8px 8px;
     text-decoration: none;
-    font-size: 16px;
-    color: #333;
-    border: 1px solid #333;
     border-radius: 8px;
-    padding: 8px;
-    line-height: 40px;
+    width: 30px;
+    height: 30px;
     text-align: center;
+    line-height: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+   
+/* pagination hover effect on non-active */
+.page a:hover:not(.active) {
+    background-color: #87BC60;
+    color: white;
+}
+   
+/* pagination hover effect on active */
+   
+.page a:nth-child(2) {
+    background-color: #355441;
+    color: white;
 }
 
 /* -----------footer----------------- */
