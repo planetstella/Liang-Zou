@@ -4,19 +4,13 @@ body{
     background-color: #f9f9f9;
     width: 100%;
     color: #333;
-    font-family: 'Noto Sans TC', sans-serif, 'Roboto', sans-serif;
-    /* ----不確定為何顏色沒吃到＆字體有沒有吃到---- */
+    font-family: 'Noto Sans TC', 'Roboto';
 }
 
 /* -------------header導覽列----------------- */
 .header{
     background-color: #FFE78F;
-    height: 84px;
-
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
+    /* height: 84px; */
 }
 
 .headerContent{
@@ -94,13 +88,15 @@ body{
 }
 
 
-/* -----------content內文----------------- */
+/* -----------------分類按鈕----------------------- */
 .vegSelBtn{
-    margin-top: 380px;
+    margin: 88px auto 32px; 
+    width: 100%;
+}
+
+.vegSelBtn ul{
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin-bottom: 50px;
 }
 
 .vegSelBtn li > a{
@@ -112,30 +108,49 @@ body{
     border: 2px solid #335441;
     border-radius: 25px;
     padding: 8px 16px;
+
+    display: block;
+    text-align: center;
 }
 
+.vegSelBtn a:hover:not(.active) {
+    background-color: #87BC60;
+    color: white;
+}
+
+.vegSelBtn .active{
+    background-color: #355441;
+    color: white;
+}
+
+
+/* -----------content內文----------------- */
 .vegProducts{
+    width: 100%;
+    /* margin-top: 32px; */
+}
+
+.vegProducts ul{
+    width: 1236px;
     margin: 0 auto; 
     display: flex;
-    align-items: center;
-    /* justify-content: center; */
-    width: 1200px;
     flex-flow: row wrap;
 }
 
 .vegProducts li{
-    margin-right: 18px;
+    margin: 0 18px 24px;
+    margin-left: 18px;
     /* border: 1px solid #333; */
-    margin-bottom: 24px;
 }
 
 .vegProducts img{
     margin-bottom: 12px;
+    width: 273px;
 }
 
 .vegProducts li .info{
     display: flex;
-    max-width: 273px;
+    width: 273px;
 }
 
 .vegProducts li .info .infoLeft{
@@ -195,14 +210,18 @@ body{
     color: #E7B343;
 }
 
+.vegProducts li .info .infoRight a i:hover{
+    <i class="fa-solid fa-heart"></i>
+}
+
 .vegProducts li .addCartBtn{
     background: #355441;
     border-radius: 8px;
-    padding: 8px 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 225px;
+    width: 273px;
+    height: 45px;
     margin-bottom: 12px;
 }
 
@@ -216,6 +235,10 @@ body{
     margin-right: 8px;
 }
 
+.vegProducts li .addCartBtn:hover{
+    background-color: #87BC60;
+}
+
 /* ---------------pagination------------------- */
 .pagination{
     display: block;
@@ -224,7 +247,7 @@ body{
 }
 
 .page {
-    width: 400px;
+    width: 312px;
     line-height: 40px;
     margin: 0 auto;
 }
@@ -232,13 +255,13 @@ body{
 .page a {
     display: inline-block;
     color: #333333;
-    padding: 8px 8px;
+    /* padding: 8px 8px; */
     text-decoration: none;
     border-radius: 8px;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     text-align: center;
-    line-height: 30px;
+    line-height: 40px;
     font-size: 16px;
     font-weight: 500;
 }
@@ -258,9 +281,8 @@ body{
 
 /* -----------footer----------------- */
 .footer{
-    position: relative;
-    left: 0;
-    bottom: 0;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .footerTop{
@@ -272,9 +294,8 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 62.5%;
     height: 322px;
-    margin: auto auto;
+    margin: 0 auto;
 }
 
 .TopLeft > ul{
@@ -283,8 +304,12 @@ body{
     margin-right: 104px;
 }
 
+.TopLeft > ul > li{
+    height: 32px;
+    margin: 0 10px;
+}
+
 .TopLeft > ul > li > a{
-    margin-right: 20px;
     font-size: 32px;
 }
 
@@ -341,15 +366,10 @@ body{
     letter-spacing: 1.12px;
 }
 
-
-
-
-
-
 /* -----------------------------------RWD mobile----------------------------------------- */
 @media screen and (max-width: 375px){
     .header{
-        height: 60px;
+        height: 260px;
         width: 375px;
         margin: 0 auto;
     }
@@ -386,7 +406,7 @@ body{
     }
 
     .banner{
-        background-image: url(img/banner\ mb.png);
+        background-image: url("../img/banner\ mb.png");
         width: 375px;
         margin: 0 auto;
     }
@@ -400,21 +420,137 @@ body{
         letter-spacing: 2.8px;
     }
     
-    .vegSelBtn{
-        width: 324px;
-        flex-flow: row wrap;
-        /* margin-top: 24px;
-        margin-bottom: 32px; */
+    /* ---------分類按鈕------------ */
+    .vegSelBtn {
+        margin: 24px auto 32px;
     }
 
-    .vegSelBtn li{
-        margin: 0 18px;
-        margin-bottom: 16px;
+    .vegSelBtn ul{
+        flex-wrap: wrap;
+    }
+
+    .vegSelBtn ul li{
+        width: 50%;
+        margin: 8px 0;
     }
 
     .vegSelBtn li > a{
-        padding: 8px 16px;
         font-size: 18px;
-        letter-spacing: 0;
+        width: 128px;
     }
+    
+
+    /* ------------content內文---------------- */
+    .vegProducts ul{
+        width: 344px;
+    }
+
+    .vegProducts img{
+        width: 156px;
+        height: 133px;
+    }
+
+    .vegProducts li{
+        margin: 0 8px 16px;
+    }
+
+    .vegProducts li .info{
+        width: 156px;
+    }
+
+    .vegProducts li .info .infoLeft > p{
+        font-size: 14px;
+        letter-spacing: 1.4px;
+    }
+
+    .vegProducts li .info .infoLeft > h6{
+        font-size: 16px;
+        letter-spacing: 1.6px;
+        width: 156px;
+        height: 48px;
+    }
+
+    .vegProducts li .info .infoLeft .price{
+        width: 156px;
+    }
+
+    .vegProducts li .info .infoLeft .price p:first-child{
+        font-size: 18px;
+        letter-spacing: 1.8px;
+        margin-right: 8px;
+    }
+
+    .vegProducts li .info .infoRight a i{
+        font-size: 24px;
+    }
+
+    .vegProducts li .addCartBtn{
+        width: 155px;
+        height: 32px;
+    }
+
+    .vegProducts li .addCartBtn > a{
+        font-size: 14px;
+    }
+
+    /* --------------footer---------------- */
+    .footerTop{
+        height: 338px;
+        padding: 32px 0;
+    }
+
+    .footerTop > ul{
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .TopLeft{
+        order: 3;
+    }
+
+    .TopLeft ul{
+        margin: 0;
+    }
+
+    .TopLeft > img{
+        display: none;
+    }
+
+    .footerTop .TopMiddle{
+        margin: 0 0 24px 0;
+    }
+
+    .footerTop .TopMiddle p{
+        font-size: 14px;
+        padding: 0;
+        margin-bottom: 4px;
+        width: 327px;
+    }
+
+    .footerTop .TopMiddle a{
+        font-size: 14px;
+        padding: 0;
+        margin-bottom: 4px;
+    }
+
+    .footerTop .TopRight{
+        margin: 0 0 24px 0;
+    }
+
+    .footerTop .TopRight p{
+        font-size: 14px;
+        padding: 0;
+        margin-bottom: 4px;
+        width: 327px;
+    }
+
+    .footerBottom p{
+        font-size: 12px;
+        width: 212px;
+        padding: 0;
+        margin: 0 auto;
+        letter-spacing: 0.24px;
+        line-height: 150%;
+    }
+
 }
