@@ -210,10 +210,6 @@ body{
     color: #E7B343;
 }
 
-.vegProducts li .info .infoRight a i:hover{
-    <i class="fa-solid fa-heart"></i>
-}
-
 .vegProducts li .addCartBtn{
     background: #355441;
     border-radius: 8px;
